@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">M-Hike</string>
+    <string name="welcome_to_m_hike">Welcome to M-Hike</string>
+    <string name="create_some_hikes">Create some hikes and they\'ll appear here.</string>
+    <string name="create_hike">Create Hike</string>
+    <string name="add_hike_details">Add hike details</string>
+    <string name="hike_name">Hike name</string>
+    <string name="hike_location">Hike location</string>
+    <string name="hike_date">Hike date</string>
+    <string name="parking_available">Parking available</string>
+    <string name="hike_length">Hike length</string>
+    <string name="level_of_difficulty">Level of difficulty</string>
+    <string name="accommodation_available">Accommodation available</string>
+    <string name="person_limitation">Person limitation</string>
+    <string name="save_hike">Save Hike</string>
+    <string name="save">Save</string>
+    <string name="description">Description</string>
+    <string name="view_more">View More</string>
+    <string name="add_observation">Add Observation</string>
+    <string name="view_observation">View Observations</string>
+    <string name="add_your_observation">Add your observation</string>
+    <string name="observation">Observation</string>
+    <string name="additional_comments">Additional comments</string>
+    <string name="time_of_observation">Time of Observation</string>
+
+    <string-array name="parkingAvailable">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+</resources>
