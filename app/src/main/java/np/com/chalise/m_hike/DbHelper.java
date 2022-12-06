@@ -80,7 +80,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public List<HikeDataModel> getAllContacts() {
+    public List<HikeDataModel> getAllHikes() {
         List<HikeDataModel> contactList = new ArrayList<HikeDataModel>();
 
         String selectQuery = "SELECT  * FROM " + TABLE_NAME;
@@ -140,5 +140,31 @@ public class DbHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         return contactList;
+    }
+
+    public void deleteHike(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, "id=?", new String[]{id});
+        db.close();
+    }
+
+    public void updateCourse(String id, String name, String location, String date, String parking, String length,
+                             String difficulty, String description, String accommodation, String limitation) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(Table_Column_1_Name, name);
+        values.put(Table_Column_2_location, location);
+        values.put(Table_Column_3_Date, date);
+        values.put(Table_Column_4_Parking, parking);
+        values.put(Table_Column_5_Length, length);
+        values.put(Table_Column_6_Difficulty, difficulty);
+        values.put(Table_Column_7_Description, description);
+        values.put(Table_Column_8_Accommodation, accommodation);
+        values.put(Table_Column_9_Limitation, limitation);
+
+        db.update(TABLE_NAME, values, "id=?", new String[]{id});
+        db.close();
     }
 }

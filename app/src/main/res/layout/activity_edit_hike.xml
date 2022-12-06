@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".CreateNewHikeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/createHikeBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/edit_hike_details"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/t24"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/hikeName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/edit_text"
+                android:hint="@string/hike_name"
+                android:inputType="textCapWords"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/hikeLocation"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textCapWords"
+                android:background="@drawable/edit_text"
+                android:hint="@string/hike_location"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/hikeDate"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text"
+                android:gravity="center_vertical"
+                android:hint="@string/hike_date"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/parkingAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textCapWords"
+                android:background="@drawable/edit_text"
+                android:hint="@string/parking_available"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/hikeLength"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text"
+                android:hint="@string/hike_length"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/difficultyLevel"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text"
+                android:inputType="textCapWords"
+                android:hint="@string/level_of_difficulty"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/accommodationAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text"
+                android:hint="@string/accommodation_available"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/personLimitation"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text"
+                android:hint="@string/person_limitation"
+                android:inputType="textCapWords"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lines="4"
+                android:overScrollMode="always"
+                android:gravity="start"
+                android:paddingTop="8dp"
+                android:background="@drawable/edit_text"
+                android:hint="@string/description"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createHikeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn2"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

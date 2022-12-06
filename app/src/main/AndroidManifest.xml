@@ -16,6 +16,13 @@
         android:theme="@style/Theme.MHike"
         tools:targetApi="31">
         <activity
+            android:name=".EditHikeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ViewObservationActivity"
             android:exported="false">
             <meta-data

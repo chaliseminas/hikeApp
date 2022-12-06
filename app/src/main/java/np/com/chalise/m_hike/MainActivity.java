@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         createNewHikeButton = findViewById(R.id.createNewHikeButton);
         searchBar = findViewById(R.id.searchBar);
 
-        hikeDataModelList = db.getAllContacts();
+        hikeDataModelList = db.getAllHikes();
         adapter = new MyAdapter(hikeDataModelList, MainActivity.this);
 
         if (hikeDataModelList.isEmpty()) {

@@ -22,6 +22,7 @@
     <string name="observation">Observation</string>
     <string name="additional_comments">Additional comments</string>
     <string name="time_of_observation">Time of Observation</string>
+    <string name="edit_hike_details">Edit Hike details</string>
 
     <string-array name="parkingAvailable">
         <item>Yes</item>

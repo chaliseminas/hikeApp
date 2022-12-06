@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,35 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.name.setText(dataList.get(position).getName());
         holder.location.setText(dataList.get(position).getLocation());
         holder.date.setText(dataList.get(position).getDate());
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DbHelper dbHelper = new DbHelper(context);
+                dbHelper.deleteHike(dataList.get(holder.getAdapterPosition()).getId());
+                dataList = dbHelper.getAllHikes();
+                notifyDataSetChanged();
+            }
+        });
+
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, EditHikeActivity.class);
+                intent.putExtra("id", dataList.get(holder.getAdapterPosition()).getId());
+                intent.putExtra("name", dataList.get(holder.getAdapterPosition()).getName());
+                intent.putExtra("location", dataList.get(holder.getAdapterPosition()).getLocation());
+                intent.putExtra("date", dataList.get(holder.getAdapterPosition()).getDate());
+                intent.putExtra("parking", dataList.get(holder.getAdapterPosition()).getAvailable());
+                intent.putExtra("length", dataList.get(holder.getAdapterPosition()).getLength());
+                intent.putExtra("difficulty", dataList.get(holder.getAdapterPosition()).getDifficulty());
+                intent.putExtra("accommodation", dataList.get(holder.getAdapterPosition()).getAccommodation());
+                intent.putExtra("limitation", dataList.get(holder.getAdapterPosition()).getLimitation());
+                intent.putExtra("description", dataList.get(holder.getAdapterPosition()).getDescription());
+                context.startActivity(intent);
+                context.finish();
+            }
+        });
+
         holder.viewMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +98,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView delete, edit;
+
         public TextView date, name, location, viewMore, parking, length, difficulty, description, accommodation, limitation;
 
         public ViewHolder(@NonNull View itemView) {
@@ -77,6 +109,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             name = itemView.findViewById(R.id.hikeItemName);
             location = itemView.findViewById(R.id.hikeItemLocation);
             viewMore = itemView.findViewById(R.id.viewMoreText);
+            delete = itemView.findViewById(R.id.deleteHike);
+            edit = itemView.findViewById(R.id.editHike);
         }
     }
 }
